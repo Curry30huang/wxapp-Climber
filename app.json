@@ -1,0 +1,42 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/logs/logs",
+    "pages/function1/function",
+    "pages/setting/setting",
+    "pages/function2/function2",
+    "pages/containf/containf",
+    "pages/focus_setting/focus_setting"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "Weixin",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "backgroundColor": "#FFEBCD",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "主页",
+        "iconPath": "/images/主页.png",
+        "selectedIconPath": "/images/主页2.png"
+      },
+      {
+        "pagePath": "pages/containf/containf",
+        "text": "功能",
+        "iconPath": "/images/专注.png",
+        "selectedIconPath": "/images/专注2.png"
+      },
+      {
+        "pagePath": "pages/setting/setting",
+        "text": "我的",
+        "iconPath": "/images/设置.png",
+        "selectedIconPath": "/images/设置2.png"
+      }
+    ]
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json"
+}
