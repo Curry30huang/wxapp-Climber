@@ -1,0 +1,10 @@
+<view class="passage1" wx:if="{{list[0]}}">
+  <rich-text nodes="{{passage1}}"></rich-text>
+</view>
+<view class="passage2" wx:if="{{list[1]}}">
+  <rich-text nodes="{{passage2}}"></rich-text>
+</view>
+<view class="passage3" wx:if="{{list[2]}}">
+  <text>现在还无此文章，敬请期待</text>
+</view>
+

@@ -1,0 +1,14 @@
+<!--components/swiper.wxml-->
+<view class="swiper_container">
+  <swiper class="swiper" indicator-dots="{{true}}" autoplay="{{true}}" indicator-active-color="#FFD700" indicator-color="#FFF" circular="true">
+    <swiper-item class="swiper_item">
+      <image src="https://s1.imagehub.cc/images/2020/11/25/475a2522a35a82a3e82644660101ac12.png " class="swiper_image" bindtap="change_index" data-index="0"></image>
+    </swiper-item>
+    <swiper-item class="swiper_item">
+      <image src="https://s1.imagehub.cc/images/2020/11/25/ecd1273c040757ec0a506629fa324aa1.png" class="swiper_image" bindtap="change_index" data-index="1"></image>
+    </swiper-item>
+    <swiper-item class="swiper_item" >
+      <image src="https://s1.imagehub.cc/images/2020/11/25/9b3077bba9dc53706b02225f2c52a621.jpg" class="swiper_image" bindtap="change_index" data-index="2"></image>
+    </swiper-item>
+  </swiper>
+</view>

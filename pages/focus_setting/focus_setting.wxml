@@ -1,0 +1,34 @@
+
+<!-- 调节呼吸时间的swiper，1-10min -->
+<!-- 播放白色音乐 -->
+
+<!-- 测试引入的设置 -->
+<view class="container">
+  	<!-- 隐藏开关 -->
+	<switch bindchange="hidden_tap" checked="{{boolnum}}">显示已经呼和吸的次数</switch>
+	<view class="section panel">
+	  <text class="section_title">专注时长(分钟)</text>
+	  <view class="section_body">
+	    <slider
+	    	bindchange="changeWorkTime"
+	    	show-value="true"
+	    	min="1"
+	    	max="15"
+	    	value="{{workTime}}"
+	    	left-icon="cancel"
+	    	right-icon="success_no_circle"/>
+	  </view>
+	</view>
+
+	<view class="section panel">
+	  <view class="section_title">
+	  	<switch class="section_check" checked="{{check}}" size="mini" bindchange="musicChange"/>
+	  	<text>启用背景音乐</text>
+	  </view>
+	  <view class="section_body">
+	  	<picker  class="section_tip" range="{{name_list}}" bindchange="chooseMusic">【选择音乐】准备播放的音乐：《{{name_list[index]}}》</picker>
+	  </view>
+	</view>
+	<view>【注意使用背景音乐之后页面就需要下拉才能显示出整个的页面】</view>
+
+</view>

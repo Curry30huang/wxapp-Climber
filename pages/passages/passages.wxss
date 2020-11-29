@@ -1,0 +1,7 @@
+/* pages/passages/passages.wxss */
+.passage1{
+  background-image: url("https://s1.imagehub.cc/images/2020/11/25/32afb9dd2a82da52c2a882aba3c13197.png");
+}
+.passage2{
+  background-image: url("https://s1.imagehub.cc/images/2020/11/25/32afb9dd2a82da52c2a882aba3c13197.png");
+}

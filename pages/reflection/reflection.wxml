@@ -1,0 +1,32 @@
+<!-- 这是反思自我的模块 -->
+<view class="container">
+  <view class='header'>
+    <text class='header_text'>开始回顾</text>
+        <!-- 管理页面没有解决，需要有删除项目，删除下面数据的内容 -->
+    <image src='/images/add.png' class="plus_img"  bindtap='add'></image>
+    <!-- 需要绑定跳转页面函数，跳转到记录页面 -->
+    <image src='/images/editor.png' class='editor_icon' bindtap="editor"></image>
+  </view>
+
+  <!-- 下面需要展现，数据可视化里程碑，显示标题，好的有小红旗，不好的有问号 -->
+  <scroll-view class='some_list'>
+    <view class='list_item' wx:for="{{list}}" data-index="{{index}}" wx:key="*this" >
+      <image 
+      data-index='{{index}}' 
+      data-src='{{item.check ? "/images/check_true.png" : "/images/check_false.png" }}' 
+      bindtap='check' 
+      src='{{item.check ? "/images/check_true.png" : "/images/check_false.png" }}' 
+      class="list_check {{chexkStatus ? 'show' : 'hide'}} "></image>
+      <!-- 这个是点击进入修改界面（可以学习，后期放到数据库里面） -->
+      <view class='{{chexkStatus ? "list_pad" : "list_rgt"}}'  bindtap='listDetail' data-index="{{index}}">
+        <view class='list_time'>{{item.time}}</view>
+        <view class='list_title'>{{item.boolnum ? "（好的）":"（未做好）"}}{{item.title}}</view>
+        <view class='list_text'><text class='create_time'>{{item.time}}</text>{{item.text}}</view>
+      </view>
+    </view>
+  </scroll-view>
+    <view class="bottom_btn_box {{chexkStatus ? 'show' : 'hide'}} ">
+      <button class='editor_btn' bindtap='save'>完成</button>
+      <button class='delete_btn' bindtap='delHandel'>删除</button>
+    </view> 
+</view>

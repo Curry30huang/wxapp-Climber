@@ -1,0 +1,262 @@
+/* 显示时间的样式(还没该 像素 px-rpx) */
+.container {
+  display: flex;
+  height: 100%;
+  flex-direction: column;
+  overflow: hidden;
+  background-color: #fff;
+}
+
+/* 隐藏文字的样式 */
+.hidden_one {
+  text-align: center;
+  font-size: 40rpx;
+  color: red;
+}
+
+.hidden_two {
+  text-align: center;
+  font-size: 40rpx;
+  color: green;
+}
+
+/* 设置按钮的样式 */
+.setting {
+  display: flex;
+  justify-content: center;
+  height: 50rpx;
+  padding-top: 40rpx;
+}
+
+
+
+.timer_main {
+  position: relative;
+  display: flex;
+  flex: 2;
+  justify-content: center;
+  text-align: center;
+  background:linear-gradient(rgb(230,68,252),rgb(124,20,241));
+  transition: all .5s;
+  z-index: 1;
+  padding: 20rpx 0;
+}
+
+.timer_time-wrap {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 300rpx;
+  height: 300rpx;
+  text-align: center;
+  transition: all .3s;
+  top: 100rpx;
+}
+
+.timer_progress {
+  position: absolute;
+  top: 0;
+  width: 150rpx;
+  height: 300rpx;
+  overflow: hidden;
+  transition: all .3s;
+}
+
+.timer_progress_mask {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  border: 6rpx solid rgb(124,20,241);
+  opacity: .5;
+  border-radius: 50%;
+}
+
+.timer_left {
+  left: 0;
+}
+
+.timer_right {
+  right: 0;
+}
+
+.timer_circle {
+  position: absolute;
+  top: 0;
+  width: 300rpx;
+  height: 300rpx;
+  border: 6rpx solid transparent;
+  border-radius: 50%;
+  transition: all .3s;
+}
+
+.timer_circle--left {
+  left: 0;
+  border-left: 6rpx solid #fff;
+  border-bottom: 6rpx solid #fff;
+  transform: rotate(45deg);
+}
+
+.timer_circle--right {
+  right: 0;
+  border-right: 6rpx solid #fff;
+  border-bottom: 6rpx solid #fff;
+  transform: rotate(-45deg);
+}
+
+.timer_time {
+  font-size: 80rpx;
+  color: #fff;
+  font-weight: lighter;
+  transition: font-size .3s;
+}
+
+.timer_taskName {
+  position: absolute;
+  top: 12rpx;
+  font-size: 40rpx;
+  letter-spacing: 20rpx;
+  color: purple;
+  transition: all .3s;
+  animation: text_an 7s infinite ease-in-out;
+  -webkit-animation: text_an 7s infinite ease-in-out;
+}
+
+@keyframes text_an {
+  0% {
+      opacity: 0.1;
+      -webkit-opacity: 0.1;
+  }
+
+  25% {
+      opacity: 0.5;
+      -webkit-opacity: 0.5;
+  }
+
+  50% {
+      opacity: 1;
+      -webkit-opacity: 1;
+  }
+
+  75% {
+      opacity: 0.5;
+      -webkit-opacity: 0.5;
+  }
+
+  100% {
+      opacity: 0.1;
+      -webkit-opacity: 0.1;
+  }
+}
+
+.timer_done {
+  width: 128rpx;
+  height: 128rpx;
+}
+
+.timer_footer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex: 1;
+  transition: all .3s;
+}
+
+.timer .timer_ctrl {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  font-size: 24rpx;
+  color: #fff;
+  width: 160rpx;
+  height: 160rpx;
+  margin: 0 40rpx;
+  border-radius: 100%;
+  transition: all .7s;
+  background-color: rgb(124,20,241);
+}
+
+.timer .timer_ctrl2 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  font-size: 24rpx;
+  color: #fff;
+  width: 160rpx;
+  height: 160rpx;
+  margin: 0 60rpx;
+  border-radius: 100%;
+  transition: all .7s;
+  background-color: rgb(124,20,241);
+}
+
+/* 专注开始时的样式 */
+.timer--runing .timer_main {
+  flex: 1;
+}
+
+.timer--runing .timer_time {
+  font-size: 90rpx;
+}
+
+.timer--runing .timer_time-wrap {
+  width: 400rpx;
+  height: 400rpx;
+}
+
+.timer--runing .timer_progress {
+  width: 200rpx;
+  height: 400rpx;
+}
+
+.timer--runing .timer_circle {
+  width: 400rpx;
+  height: 400rpx;
+}
+
+.timer--runing .timer_footer {
+  flex: 0;
+  position: absolute;
+  bottom: 100rpx;
+  width: 100%;
+  z-index: 10;
+}
+
+.timer--runing .timer_ctrl {
+  background-color: rgb(124,20,241);
+  height: 80rpx;
+  margin-bottom: 100rpx;
+  border: 1px dashed #dedede;
+  border-radius: 40rpx;
+}
+
+.timer--runing .timer_ctrl2 {
+  background-color: rgb(124,20,241);
+  height: 120rpx;
+  margin-bottom: 60rpx;
+  border: 1px dashed #dedede;
+  border-radius: 40rpx;
+}
+
+.container_tap {
+  display: flex;
+  flex-direction: row;
+  height: 95rpx;
+  margin-bottom: 60rpx;
+}
+
+.exam_num {
+  margin:0 100rpx;
+}
+
+.input_exam{
+  margin-top: 30rpx;
+  border: 1px solid #fff;
+  height: 60rpx;
+  color: #fff;
+}

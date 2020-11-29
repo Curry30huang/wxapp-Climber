@@ -1,0 +1,38 @@
+<!-- “我的”页面 -->
+<!-- 有用户使用说明，获取用户的头像，昵称，账号；后期账号作为数据库的凭证访问相应的数据 -->
+<!-- 待补充的还需要补充 -->
+<view class="container">
+  <view class="up">
+    <view class="up-background"></view>
+    <view class="center">个人中心</view>
+    <view class="userinfo">
+      <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 授权登录 </button>
+      <block wx:else>
+        <image  class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
+        <text class="userinfo-nickname">{{userInfo.nickName}}</text>
+    </block>
+    </view>
+  </view>
+  <view class="below">
+    <view class="box">
+      <navigator url="/pages/totaldata/totaldata"><view class="bar">
+        <image src="https://s1.imagehub.cc/images/2020/11/24/3.png" ></image>
+        <text class="text_below">统计数据</text>
+        <image src="https://s1.imagehub.cc/images/2020/11/24/mmexport1606221283932.png" style="display:flex; margin-left:110rpx"></image>
+      </view></navigator>
+      <view class="line"></view>
+      <view class="bar">
+        <image src="https://s1.imagehub.cc/images/2020/11/24/2.png" ></image>
+        <text class="text_below">向我们反馈</text>
+        <image src="https://s1.imagehub.cc/images/2020/11/24/mmexport1606221283932.png" style="display:flex; margin-left:55rpx" ></image>
+      </view>
+      <view class="line"></view>
+      <view class="bar">
+        <image src="https://s1.imagehub.cc/images/2020/11/24/1.png " ></image>
+        <text class="text_below">帮助</text>
+        <image src="https://s1.imagehub.cc/images/2020/11/24/mmexport1606221283932.png" style="display:flex; margin-left:200rpx"  ></image>
+      </view>
+      <view class="line2"></view>
+    </view>
+  </view>
+</view>
