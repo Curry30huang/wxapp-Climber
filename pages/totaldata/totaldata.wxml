@@ -1,0 +1,10 @@
+<!--pages/totaldata/totaldata.wxml-->
+<image src="https://s1.imagehub.cc/images/2020/11/23/test.png" class='modelBack' ></image>
+<view class="container">
+  <view class="show_text">专注和反思自我（天数），微习惯（次数）</view>
+  <ec-canvas  canvas-id="mychart-multi-bar" ec="{{ ecBar }}"></ec-canvas>
+  <view class="show_text">反思自我数据统计</view>
+  <ec-canvas  canvas-id="mychart-multi-pie" ec="{{ ecPie }}"></ec-canvas>
+  <view class="show_text">每日专注时长记录</view>
+  <ec-canvas  canvas-id="mychart-multi-line" ec="{{ ecLine }}"></ec-canvas>
+</view>

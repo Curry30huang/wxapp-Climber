@@ -1,0 +1,6 @@
+{
+  "usingComponents":{
+    "Rotation_chart": "../..//components/Rotation_chart/Rotation_chart"
+  },
+  "navigationBarTitleText": "攀登者"
+}

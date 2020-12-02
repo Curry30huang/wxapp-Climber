@@ -1,0 +1,66 @@
+<!--pages/habit/habit.wxml-->
+<!--微习惯页面-->
+
+<form bindsubmit="submit" bindreset="reset">
+  <view class="title">微习惯养成</view>
+  <view class="title">从一个小目标开始</view>
+  <!--周期输入-->
+  <view class="circle">
+    <text>最近</text>
+    <picker wx:if="{{person1==false}}" bindchange="timeChange" range='{{timeData}}' >{{timeData[timeDataIndex]}}</picker>
+    <input wx:if="{{person1==true}}" class="time"placeholder="天数" type="text"  style="width:70rpx;" name="input1"></input>
+    <text>天</text>
+    <!-- 添加功能，自定义点击还可以返回来，返回到picker组件，注意写到详细使用说明中 -->
+    <text wx:if="{{person1==false}}" class="person" bindtap="timeTap">【自定义】</text>
+    <text wx:if="{{person1!=false}}" class="person" bindtap="timeTap">【返回】</text>
+  </view>
+  <!--习惯输入-->
+  <view class="habit">
+    <text>每天</text>
+    <view wx:if="{{person2==false}}">
+      <picker 
+      mode="multiSelector" 
+      bindchange="taskChange"
+      bindcolumnchange="columnChange"
+      range="{{taskData}}" 
+      value="{{taskDataIndex}}">
+        <text>{{taskData[0][taskDataIndex[0]]}}</text>
+        <text>{{taskData[1][taskDataIndex[1]]}}</text>
+        <text>{{taskData[2][taskDataIndex[2]]}}</text>
+      </picker>
+    </view>
+    <input wx:if="{{person2==true}}" placeholder="自定义内容" type="text" class="task" name="input2"></input>
+    <!-- 添加功能，自定义点击还可以返回来，返回到picker组件，注意写到详细使用说明中 -->
+    <text wx:if="{{person2==false}}" class="person" bindtap="habitTap">【自定义】</text>
+    <text wx:if="{{person2!=false}}" class="person" bindtap="habitTap">【返回】</text>
+  </view>
+  <!--表单提交重置-->
+  <view class="buttonflextion">
+    <button style="width:100px;color:white;background-color:#6810cb" form-type="submit">Go!</button>
+    <button style="width:100px;color:white;background-color:#6810cb" bindtap="editor">管理</button>
+  </view>
+</form>
+<!--页面渲染-->
+<scroll-view class='some_list'>
+    <view class='list_item' wx:for="{{list}}" data-index="{{index}}" wx:key="*this" >
+        <image
+        data-index='{{index}}'
+        data-src='{{item.check ? "/images/check_true.png" : "/images/check_false.png" }}'
+        bindtap='check'
+        src='{{item.check ? "/images/check_true.png" : "/images/check_false.png" }}'
+        class="list_check {{chexkStatus ? 'show' : 'hide'}} " />
+        <!-- 这个是点击进入修改界面（可以学习，后期放到数据库里面） -->
+        <view class='{{chexkStatus ? "list_pad" : "list_rgt"}}'   data-index="{{index}}">
+        <view class='list_time'>{{item.time}}</view>
+        <view class='list_title'>{{item.habit}}</view>
+        <view class='list_text'><text class='create_time'>{{item.time}}</text>需要坚持{{item.circle}}天</view>
+        </view>
+        <image data-index='{{index}}' src='{{ list2[index].check ?"https://s1.imagehub.cc/images/2020/11/27/fc5906854a8b42292697908f8c820d5a.jpg":"https://s1.imagehub.cc/images/2020/11/27/cc840ca6f954787e15a318add41bd7fc.jpg"}}' class="clock_in" bindtap="clock_in" mode="aspectFit"/>
+    </view>
+</scroll-view>
+<view class=" {{chexkStatus ? 'bottom_btn_box': 'hide'}} ">
+    <button class='editor_btn' bindtap='save'>完成</button>
+    <button class='editor_btn' bindtap='delHandel'>删除</button>
+</view>
+
+

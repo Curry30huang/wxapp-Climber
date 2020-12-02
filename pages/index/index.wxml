@@ -1,0 +1,30 @@
+<!-- 这个是主页的页面 -->
+<view class="container">
+  <view>
+    <!--轮播图-->
+    <Rotation_chart></Rotation_chart> 
+    <!--圆-->
+    <view class="circles">
+      <view wx:for="{{circles}}" wx:key="index">
+        <navigator url="{{item.nav}}">
+          <view class="circle">
+            <image src="{{item.src}}" style="height:55px;width:55px;border-radius:55px"> </image>
+          </view>
+          <text>{{item.text}}</text>
+        </navigator>
+      </view>
+    </view>  
+  </view>
+  <!--文章封面-->
+  <view class="below">
+    <view wx:for="{{image_srcs}}" wx:key="index">
+      <view>
+        <image src="{{item.image_srcs}}" class="image_below"></image>
+      </view>
+    </view>
+  </view>
+</view>
+
+
+
+

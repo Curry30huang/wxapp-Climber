@@ -1,0 +1,8 @@
+{
+  "component": true,
+  "usingComponents": {"ec-canvas": "../../ec-canvas/ec-canvas"},
+  "backgroundTextStyle": "dark",
+  "navigationBarBackgroundColor": "#f5faa2",
+  "navigationBarTitleText": "数据可视化",
+  "navigationBarTextStyle": "black"
+}

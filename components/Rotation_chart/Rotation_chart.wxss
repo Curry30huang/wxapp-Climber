@@ -1,0 +1,38 @@
+/* 轮播图容器 */
+.swiper_container{
+  margin: 40rpx 0rpx 0rpx 0rpx;
+  width: 100%;
+  height: 326rpx;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+/* 轮播图样式 */
+.swiper{
+  height: 326rpx;
+  width: 654rpx;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  border: 2rpx solid black;
+  border-radius:100rpx ;
+  background-color: white;
+}
+/* 轮播图组件样式 */
+.swiper_item{
+  height: 326rpx;
+  width: 654rpx;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+
+
+}
+/* 轮播图图片样式 */
+.swiper_image{
+  height: 326rpx;
+  width: 654rpx;
+}
+
+

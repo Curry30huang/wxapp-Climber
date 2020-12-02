@@ -1,0 +1,66 @@
+
+.title{
+  font-size: larger;
+  text-align: center;
+  margin: 20rpx;
+}
+
+.buttonflextion{
+  margin: 30rpx;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.habit{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.circle{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.person{
+  color:gray;
+  font-size: 30rpx;
+}
+
+.btn{
+  font-size: 35rpx;
+}
+
+/* 待更改的 */
+
+.list_item{margin-bottom: 30rpx; border-bottom: 1px solid #ddd;padding-bottom: 20rpx;position: relative;}
+
+.some_list{width: 100%; box-sizing: border-box;padding: 20rpx 30rpx;position: absolute;top:360rpx;padding-bottom: 80rpx;}
+page{
+  height:100%;
+  overflow-x: hidden;
+}
+.back_img{
+  position: fixed;
+  top:0;
+  left:0;
+  width: 100%;
+  height: 100%;
+}
+
+.list_time{font-size: 24rpx;}
+.list_title{font-size: 30rpx; margin: 20rpx 0;}
+.list_text{font-size: 24rpx; color: #757677}
+.create_time{ color: #6810cb;font-size: 26rpx;margin-right: 20rpx;}
+.list_pad{padding-left: 80rpx; transition:  all 0.3s;}
+.list_check{position: absolute;top:10rpx;left:0px;width: 40rpx;height: 40rpx;}
+/* 打卡的样式 */
+.clock_in{display: block;position: absolute; top:10rpx;right:0px;width: 100rpx;height: 100rpx;}
+
+.hide{display: none;}
+.show{display: block;}
+.bottom_btn_box{ display: flex;flex-direction: row;justify-content: space-around; position: fixed;bottom: 2px;left: 0px; text-align: center;width: 100%;}
+.bottom_btn_box .editor_btn{display: block; width: 260rpx; height: 80rpx; background: #6810cb; color: #fff; margin-top: 20rpx;}
+
