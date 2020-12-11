@@ -1,0 +1,63 @@
+<!-- 这个是专注呼吸的进阶版本（已经初步完成） -->
+<view class="container timer {{isRuning ? 'timer--runing': ''}}">
+	<!-- 专注时间显示(初步完成) -->
+	<view class="timer_main">
+		<view class="timer_time-wrap">
+
+			<!-- 时间显示模块 -->
+			<view class="timer_progress_mask"></view>
+			<view class="timer_progress timer_left">
+				<view class="timer_circle timer_circle--left" style="transform: rotate({{leftDeg}}deg);"></view>
+			</view>
+			<view class="timer_progress timer_right">
+				<view class="timer_circle timer_circle--right" style="transform: rotate({{rightDeg}}deg);"></view>
+			</view>
+			<text wx:if="{{!completed}}" class="timer_time">{{remainTimeText}}</text>
+			<!-- 引导呼吸并提醒专注 -->
+			<text wx:if="{{isRuning}}" class="timer_taskName">
+				{{taskName}}{{completed ? '已完成！' : '中'}}
+			</text>
+			<image wx:if="{{completed}}" class="timer_done" src="https://s1.imagehub.cc/images/2020/11/30/complete.png">
+			</image>
+		</view>
+	</view>
+	<!-- 开始和结束按钮 -->
+	<!-- 初步完成 -->
+	<view class="timer_footer">
+		<view class="container_tap" hidden="{{!isRuning}}">
+			<view bindtap="hu_tap" class="timer_ctrl">呼一次</view>
+			<view bindtap="xi_tap" class="timer_ctrl">吸一次</view>
+		</view>
+
+		<view class="container_tap" hidden="{{!isRuning}}">
+			<!-- 手动检测input  它的右边应该有个检测 -->
+			<input  placeholder="请输入当前呼吸的组数" hidden="{{!isRuning}}" class="input_exam"
+				bindinput="get_inputnum" placeholder-style="color:#fff;"/>
+			<!-- 检测按钮，检测组数 -->
+			<view hidden="{{!isRuning}}" class="timer_ctrl2" bindtap="self_exam">检测
+			</view>
+		</view>
+		<!-- 隐藏的呼吸次数(未做样式) -->
+		<view hidden="{{boolnum}}" class="exam_num">呼的次为{{hunum}},吸的次数为{{xinum}}</view>
+		<text decode="{{true}}">&ensp;</text>
+		<!-- 结束按钮(初步完成) -->
+		<view bindtap="startTimer" data-type="work" class="timer_ctrl2">
+			{{isRuning ? '结束': '开始数息'}}
+		</view>
+
+		<!-- 显示内容 -->
+		<view hidden="{{boolnumgood}}" bindtap="miss_tap2">真棒！你专注于当下，组数回答正确！现在呼的次为{{hunum}},吸的次数为{{xinum}},组数为{{groupnum}}
+			(点击即可消失)
+		</view>
+		<view hidden="{{boolnumbad}}" bindtap="miss_tap3">
+			很遗憾，组数回答错误，重新开始，继续专注一下吧！现在呼的次为{{hunum}},吸的次数为{{xinum}},组数为{{groupnum}}（点击即可消失）
+		</view>
+		<!-- 设置跳转，图标 -->
+		<view class="setting">
+			<navigator url="/pages/focus_setting/focus_setting">
+				<image src="https://s1.imagehub.cc/images/2020/11/22/edb3cbc4cc280f5919577c4a512093bc.png" mode="aspectFit"
+					style="width:77rpx;height:77rpx"></image>
+			</navigator>
+		</view>
+	</view>
+</view>

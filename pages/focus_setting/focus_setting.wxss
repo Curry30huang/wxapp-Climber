@@ -1,0 +1,24 @@
+/* pages/focus_setting/focus_setting.wxss */
+/* pages/setting2/setting2.wxss */
+.container{
+	padding:30rpx 20rpx;
+}
+.section{
+	margin-bottom: 20rpx;
+}
+.section_title{
+	font-size: 24rpx;
+	color:#999;
+}
+.section_check{
+	margin-right: 10rpx;
+}
+.section_tip{
+	display: block;
+	text-align: right;
+	color: #2e2323;
+	padding-bottom: 20rpx;
+}
+.section_body{
+	margin-top: 30rpx;
+}

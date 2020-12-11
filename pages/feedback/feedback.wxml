@@ -1,0 +1,23 @@
+<!--pages/feedback/feedback.wxml-->
+<form bindsubmit="submit">
+<view class="weui-cells__title">用户反馈</view>
+    <view class="weui-cells weui-cells_after-title">
+        <view class="weui-cell weui-cell_active">
+             <view class="weui-cell__bd">
+                <textarea placeholder='请告诉我们你的宝贵意见与建议！' name="textarea" class='weui-textarea' value='{{text}}' style="height: 3.3em" ></textarea>
+            </view>
+        </view>
+    </view>
+    <button form-type="submit" style="width:320px" class="weui-btn_cell weui-btn_cell-primary"><image class="weui-btn_cell__icon" src="/images/check_true.png"></image>点击这里督促开发者打工</button>
+ </form>
+
+        <view class="weui-cells__title">打工人的更新日志</view>
+         <view wx:for="{{updatelog}}" wx:key="index" id="{{item.id}}" class="weui-cells weui-cells_after-title">
+            <view class="weui-cell weui-cell_access" hover-class="weui-cell_active" bindtap="detail" data-index="{{index}}">
+                <view class="weui-cell__bd">{{item.version}}   {{item.date}}</view>
+                <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+            </view>
+            <view class="content" wx:if="{{detail[index]}}" >{{item.content}}</view>
+        </view>
+
+			<view class="footer">QQ群号：176817557</view>

@@ -1,0 +1,85 @@
+<view class="passage1" wx:if="{{list[0]}}">
+  <view class="btnflextion">
+    <button class="btnstyle" data-index="{{0}}" bindtap="navg">正念数息</button>
+    <button class="btnstyle" data-index="{{1}}" bindtap="navg">反思自我</button>
+    <button class="btnstyle" data-index="{{2}}" bindtap="navg">微习惯</button>
+  </view>
+
+  <view hidden="{{list2[0]}}">
+    <view class="title">正念数息，拉回专注</view>
+    <text decode="{{true}}"> &nbsp;</text>
+    <view class="short_p">你是否难以停下滑动短视频的手指？</view>
+    <view class="short_p">你是否自习时总是有各种理由打开手机？</view>
+    <view class="short_p">你是否上课时常常胡思乱想神游太空？</view>
+    <view class="short_p">如果你为此烦恼，就数数呼吸吧。</view>
+    <text decode="{{true}}"> &nbsp;</text>
+    <view class="long_p">在基础版中，你只需要在呼气时点击“呼一次”，吸气时点击“吸一次”。不妨从一分钟开始，慢慢提高自我要求，选择合理的时间，伴随喜欢的音乐，寻找使你沉静的节奏，坚持所设置的时间就是完成任务。万一分心，结束重来哦！</view>
+    <text decode="{{true}}"> &nbsp;</text>
+    <view class="long_p">当你对正念比较熟悉后，就能挑战可以“查数”的进阶版了。第一次呼气时默念一，第一次吸气时仍然默念一，第二次呼吸则默念二。当你要检测专注效果时，就可以输入当前组数。检测成功，恭喜你可以继续专注；检测失败，重新开始吧！</view>
+    <text decode="{{true}}"> &nbsp;</text>
+    <view class="short_p weui-footer__text weui-footer">点击图片放大</view>
+    <view class="image_size">
+      <image src="https://s1.imagehub.cc/images/2020/12/10/mmexport1607611568496.png"       data-src="https://s1.imagehub.cc/images/2020/12/10/mmexport1607611568496.png" mode="aspectFit" bindtap="show_picture"></image>
+    </view>  
+  </view>
+
+  <view hidden="{{list2[1]}}">
+    <view class="title" >回顾反思，自我迭代</view>
+    <text decode="{{true}}"> &nbsp;</text>
+    <view class="short_p">今天，你做了哪些事？</view>
+    <view class="short_p">有些事针不戳：</view>
+    <view class="long_p">数分线代听懂了，独立写出C++题了，创新项目有进展了，学会新曲子了，一日三餐正常吃了，和喜欢的人说上话了……</view>
+    <text decode="{{true}}"> &nbsp;</text>
+    <view class="short_p">有些事一团糟：</view>
+    <view class="long_p">英语听力忘打卡了，数学作业逾期了，OJ又红一片了，守夜冠军又卫冕了，啥也没做又摸鱼了……</view>
+    <text decode="{{true}}"> &nbsp;</text>
+    <view class="short_p">那么，你为什么做得好？为什么做不好？</view>
+    <view class="short_p">不妨从事件中抽身而出，以旁观者视角冷静分析这段历程中的自己：</view>
+    <view class="short_p">当时我的准备怎么样？为什么？</view>
+    <view class="short_p">当时我的心态怎么样？为什么？</view>
+    <view class="short_p">当时我的情绪怎么样？为什么？</view>
+    <view class="short_p">当时我采取了什么方法？为什么？它好/不好在哪呢？……</view>
+    <view class="short_p">慢慢把经验和教训，应用到明天吧！</view>
+    <text decode="{{true}}"> &nbsp;</text>
+    <view class="short_p weui-footer__text weui-footer">点击图片放大</view>
+    <view class="image_size">
+      <image src="https://s1.imagehub.cc/images/2020/12/10/mmexport1607611571375.png"       data-src="https://s1.imagehub.cc/images/2020/12/10/mmexport1607611571375.png" mode="aspectFit" bindtap="show_picture"></image>
+    </view>  
+  </view>
+
+  <view hidden="{{list2[2]}}">
+    <view class="title">日积跬步，以至千里</view>
+    <text decode="{{true}}"> &nbsp;</text>
+    <view class="short_p">每天背五十个英语单词难吗？</view>
+    <view class="short_p">难。那就每天五个吧！</view>
+    <view class="short_p">每天跑步三公里难吗？</view>
+    <view class="short_p">难。那就每天三百米吧！</view>
+    <view class="short_p">始终保持积极思考难吗？</view>
+    <view class="short_p">难。那就每天想两件好事吧！</view>
+    <text decode="{{true}}"> &nbsp;</text>
+    <view class="short_p">养成习惯如同游戏通关，</view>
+    <view class="short_p">从easy到hard是家常便饭。</view>
+    <text decode="{{true}}"> &nbsp;</text>
+    <view class="long_p">最开始时，请思考你的长期目标，把你的目标分解成难以失败、难以放弃、2分钟就能实现的微习惯。然后，选择合适的周期，制定合适的计划，将你的习惯纳入日程。</view>
+    <text decode="{{true}}"> &nbsp;</text>
+    <view class="short_p">每天完成一到三个”小到不可思议“的行动，</view>
+    <view class="short_p">微量开始，超额完成。</view>
+    <view class="short_p">服从安排，降低期望。</view>
+    <view class="short_p">戒骄戒躁，自我奖励。</view>
+    <view class="short_p">一点微不足道的积极行为，</view>
+    <view class="short_p">或许就能为生活带来意想不到的改变！</view>
+    <text decode="{{true}}"> &nbsp;</text>
+    <view class="short_p weui-footer__text weui-footer">点击图片放大</view>
+    <view class="image_size">
+     <image src="https://s1.imagehub.cc/images/2020/12/10/mmexport1607611569575.png"        data-src="https://s1.imagehub.cc/images/2020/12/10/mmexport1607611569575.png" mode="aspectFit" bindtap="show_picture"></image>
+    </view>  
+  </view>
+
+</view>
+<view class="passage2" wx:if="{{list[1]}}">
+  <rich-text nodes="{{passage2}}"></rich-text>
+</view>
+<view class="passage3" wx:if="{{list[2]}}">
+  <text>现在还无此文章，敬请期待</text>
+</view>
+

@@ -1,0 +1,12 @@
+/* pages/feedback/feedback.wxss */
+.content{
+  font-size: smaller;
+  color:gray
+}
+
+.footer{
+  margin:30px;
+  text-align: center;
+  color:gray;
+  font-size:smaller
+}

@@ -1,0 +1,19 @@
+<!-- 这是记录反思自我的页面 -->
+<!--<image src="https://s1.imagehub.cc/images/2020/11/23/back3.jpg" class='modelBack' ></image>-->
+<scroll-view class='editor_box'>
+  <form bindsubmit='editorSubmit' class='editor_box' data-test="{{dates}}">
+    <view class="section">
+      <picker mode="date" value="{{date}}" start="2020-01-01" end="2050-1-23" bindchange="bindDateChange">
+        <view class="picker" data-text="{{dates}}" name="time" >
+          【点击修改】日期: {{dates}}
+        </view>
+      </picker>
+    </view>
+    <!-- 注意：使用说明加上，点击图标时间下对应标题就可以对相应内容进行修改 -->
+    <input placeholder='做的好的事' name="title1" class='title_inp'  value='{{title1}}'></input>
+    <textarea placeholder='原因或者方法' name="textarea1" class='content_text' value='{{text1}}' style="height: 9em" ></textarea>
+    <input placeholder='做的不好的事' name="title2" class='title_inp'  value='{{title2}}'></input>
+    <textarea placeholder='原因或者哪里做的不好' name="textarea2" class='content_text' value='{{text2}}' style="height: 9em" ></textarea>
+    <button class='model_btn' form-type='submit' >保存</button>
+  </form>
+</scroll-view>
