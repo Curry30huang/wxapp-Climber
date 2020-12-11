@@ -28,9 +28,9 @@ Page({
 
   navi1(){
     this.setData({
-      modedata:true
+      modedata:true,
+      chexkStatus:false
     })
-    console.log(this.data.modedata)
   },
 
   navi2(){
