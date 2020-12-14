@@ -44,15 +44,17 @@ Page({
         // 进行判断，保证不会将空数据传进去（如何只有一个层级的就不用了，因为有好坏事情，两者是独立的，所以需要判断有的是不是空的）
         var jud1= e.detail.value.title1=="" || e.detail.value.textarea1=="";
         var jud2= e.detail.value.title2=="" || e.detail.value.textarea2=="";
+        var text="";
         if(jud1==false && jud2!=false)
         {
             obj.push({
                 title: e.detail.value.title1,
-                text: e.detail.value.textarea1,
+                text: e.detail.value.title1,
                 time: this.data.dates,
                 boolnum:true,
                 check:false, //check变量是用来后面进行删除管理，选中的效果的
             });
+            text=e.detail.value.title1+e.detail.value.title1
         }
         else if(jud2==false && jud1!=false)
         {
@@ -63,6 +65,7 @@ Page({
                 boolnum:false,
                 check:false, 
             });
+            test=e.detail.value.title2+e.detail.value.textarea2
         }
         else if(!jud2 && !jud1) 
         {
@@ -79,12 +82,32 @@ Page({
                 time: this.data.dates,
                 boolnum:false,
                 check:false, 
-            });            
+            });    
+            text=e.detail.value.title2+e.detail.value.textarea2+e.detail.value.title1+e.detail.value.title1    
         }
-        // 直接封装好数据了，直接searchLog就可以访问存到内存里的数据（后期应该放到数据库里，然后通过标题不同，识别不同的数据，然后将数据再下载回来，重新填入detail页面中，然后再次修改）
-        // 使用json格式存储，调用内存中的相应数据时候：JSON.parse(wx.getStorageSync('字典名字')).相应属性名即可,
-        wx.setStorageSync('searchLog', JSON.stringify(obj));
-        wx.navigateBack({ changed: true}); //返回上一页
+
+        wx.cloud.callFunction({
+            name: 'msgSecCheck1',
+            data: {
+              text: text?text:'1'  
+              // 这一步是处理输入框值手动清空的时候会被检测出敏感词
+            }
+          }).then((res) => {
+            if (res.result.code == "200") {
+                // 成功时做其他业务操作
+                // 成功的回调函数！！
+                // 直接封装好数据了，直接searchLog就可以访问存到内存里的数据（后期应该放到数据库里，然后通过标题不同，识别不同的数据，然后将数据再下载回来，重新填入detail页面中，然后再次修改）
+                // 使用json格式存储，调用内存中的相应数据时候：JSON.parse(wx.getStorageSync('字典名字')).相应属性名即可,
+                wx.setStorageSync('searchLog', JSON.stringify(obj));
+                wx.navigateBack({ changed: true}); //返回上一页 
+            } else {
+              wx.showToast({
+                title: '包含敏感字哦。',
+                icon: 'none',
+                duration: 3000
+              })
+            }
+        })
     },
     bindDateChange: function (e) {
         this.setData({
