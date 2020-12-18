@@ -49,12 +49,12 @@ Page({
         {
             obj.push({
                 title: e.detail.value.title1,
-                text: e.detail.value.title1,
+                text: e.detail.value.textarea1,
                 time: this.data.dates,
                 boolnum:true,
                 check:false, //check变量是用来后面进行删除管理，选中的效果的
             });
-            text=e.detail.value.title1+e.detail.value.title1
+            text=e.detail.value.title1+e.detail.value.textarea1
         }
         else if(jud2==false && jud1!=false)
         {
@@ -83,9 +83,8 @@ Page({
                 boolnum:false,
                 check:false, 
             });    
-            text=e.detail.value.title2+e.detail.value.textarea2+e.detail.value.title1+e.detail.value.title1    
+            text=e.detail.value.title2+e.detail.value.textarea2+e.detail.value.title1+e.detail.value.textarea1    
         }
-
         wx.cloud.callFunction({
             name: 'msgSecCheck1',
             data: {
@@ -94,6 +93,7 @@ Page({
             }
           }).then((res) => {
             if (res.result.code == "200") {
+                console.log();(res)
                 // 成功时做其他业务操作
                 // 成功的回调函数！！
                 // 直接封装好数据了，直接searchLog就可以访问存到内存里的数据（后期应该放到数据库里，然后通过标题不同，识别不同的数据，然后将数据再下载回来，重新填入detail页面中，然后再次修改）
@@ -114,10 +114,4 @@ Page({
           dates: e.detail.value
         })
     },
-    onShareAppMessage() {
-        return {
-          title: '攀登者',
-          path: '/pages/index/index'
-        }
-      },
 })

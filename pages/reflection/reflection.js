@@ -89,10 +89,4 @@ Page({
       url: '../reflection_detail/reflection_detail'
     })
   },
-  onShareAppMessage() {
-    return {
-      title: '攀登者',
-      path: '/pages/index/index'
-    }
-  }
 })
