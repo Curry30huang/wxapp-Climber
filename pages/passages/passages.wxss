@@ -1,0 +1,41 @@
+/* pages/passages/passages.wxss */
+.passage1{
+  background-image: url("https://s1.imagehub.cc/images/2020/11/25/32afb9dd2a82da52c2a882aba3c13197.png");
+}
+.passage2{
+  background-image: url("https://s1.imagehub.cc/images/2020/11/25/32afb9dd2a82da52c2a882aba3c13197.png");
+}
+.btnflextion{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.btnstyle{
+  font-size: small;
+}
+
+.title{
+  text-align:center;
+  line-height:1.8em;
+  font-size: 60rpx;
+  font-weight: bold;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.short_p{
+  text-align:center;
+  line-height:1.8em;
+}
+
+.long_p{
+  text-indent:2em;
+  line-height:1.8em;
+}
+
+.image_size{
+  display: flex;
+  justify-content: center;
+  width: 750rpx;
+}
+

@@ -1,0 +1,90 @@
+<!--pages/habit/habit.wxml-->
+<!--微习惯页面-->
+  <view class="flextion">
+    <text style="width:200px;height:60rpx;font-size:35rpx;color:white;background-color:#339999" bindtap="navi1">设置习惯</text>
+    <text style="width:200px;height:60rpx;font-size:35rpx;color:white;background-color:#339999" bindtap="navi2">查看习惯</text>
+  </view>
+  <!--周期输入-->
+<form bindsubmit="submit" bindreset="reset">
+  <view class="set" wx:if="{{modedata==true}}">
+  <view class="circle">
+    <!-- 添加功能，自定义点击还可以返回来，返回到picker组件，注意写到详细使用说明中 -->
+    <view class="weui-cells__title">周期</view>
+        <view class="weui-cells weui-cells_after-title">
+            <view class="weui-cell weui-cell_select weui-cell_select-before">
+                <view class="weui-cell__hd weui-select">
+                  <text wx:if="{{person1==false}}" class="person" bindtap="timeTap">选择   </text>
+                   <text wx:if="{{person1!=false}}" class="person" bindtap="timeTap">自定义   </text>
+                </view>
+                <view class="weui-cell__bd weui-cell__bd_in-select-before">
+                  <picker wx:if="{{person1==false}}" bindchange="timeChange" range='{{timeData}}' > <view class="weui-select weui-select_in-select-after">{{timeData[timeDataIndex]}}</view></picker>
+                  <input wx:if="{{person1==true}}" class="time"placeholder="天数" type="text"  style="width:70rpx;" name="input1"></input>
+                </view>
+                <text>天</text>
+            </view>
+        </view>
+  </view>
+  <!--习惯输入-->
+  <view class="habit">
+    <view class="weui-cells__title">习惯</view>
+        <view class="weui-cells weui-cells_after-title">
+            <view class="weui-cell weui-cell_select weui-cell_select-before">
+                <view class="weui-cell__hd weui-select">
+                  <text wx:if="{{person2==false}}" class="person" bindtap="habitTap">选择   </text>
+                  <text wx:if="{{person2!=false}}" class="person" bindtap="habitTap">自定义   </text>
+                </view>
+                <view class="weui-cell__bd weui-cell__bd_in-select-before">
+                  <view wx:if="{{person2==false}}">
+      <picker 
+      mode="multiSelector" 
+      bindchange="taskChange"
+      bindcolumnchange="columnChange"
+      range="{{taskData}}" 
+      value="{{taskDataIndex}}">
+        <text>{{taskData[0][taskDataIndex[0]]}}</text>
+        <text>{{taskData[1][taskDataIndex[1]]}}</text>
+        <text>{{taskData[2][taskDataIndex[2]]}}</text>
+      </picker>
+    </view>
+    <input wx:if="{{person2==true}}" placeholder="自定义内容" type="text" class="task" name="input2"></input>
+                </view>
+            </view>
+        </view>
+
+    <!-- 添加功能，自定义点击还可以返回来，返回到picker组件，注意写到详细使用说明中 -->
+
+  </view>
+  <!--表单提交-->
+    <button class="btnstyle1" style="width:100px;color:white;background-color:#339999" form-type="submit">Go!</button>
+    <view class="weui-footer">
+			<view class="weui-footer__text">从一个小目标开始</view>
+		</view>
+  </view>
+</form>
+<!--页面渲染-->
+<scroll-view class='some_list' wx:if="{{modedata!=true}}">
+ <button style="color:white;background-color:#339999" size="mini" bindtap="editor" class="btn">管理</button>
+    <view class='list_item' wx:for="{{list}}" data-index="{{index}}" wx:key="*this" >
+        <image
+        data-index='{{index}}'
+        data-src='{{item.check ? "/images/check_true.png" : "/images/check_false.png" }}'
+        bindtap='check'
+        src='{{item.check ? "/images/check_true.png" : "/images/check_false.png" }}'
+        class="list_check {{chexkStatus ? 'show' : 'hide'}} " />
+        <!-- 这个是点击进入修改界面（可以学习，后期放到数据库里面） -->
+        <view class='{{chexkStatus ? "list_pad" : "list_rgt"}}'   data-index="{{index}}">
+        <view class='list_time'>{{item.time}}</view>
+        <view class='list_title'>{{item.habit}}</view>
+        <view class='list_text'><text class='create_time'>{{item.time}}</text>需要坚持{{item.circle}}天</view>
+        </view>
+        <image data-index='{{index}}' src='{{ list2[index].check ?"https://s1.imagehub.cc/images/2020/11/27/fc5906854a8b42292697908f8c820d5a.jpg":"https://s1.imagehub.cc/images/2020/11/27/cc840ca6f954787e15a318add41bd7fc.jpg"}}' class="clock_in" bindtap="clock_in" mode="aspectFit"/>
+    </view>
+</scroll-view>
+<view class=" {{chexkStatus ? 'bottom_btn_box': 'hide'}} ">
+    <button class='editor_btn' bindtap='save'>完成</button>
+    <button class='editor_btn' bindtap='delHandel'>删除</button>
+</view>
+
+
+
+

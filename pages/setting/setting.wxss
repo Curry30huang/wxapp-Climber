@@ -1,0 +1,111 @@
+.container{
+  height: 100vh;
+  display: flex;
+  flex-direction: column; 
+  align-items:center;
+  background-color: white;
+}
+.userinfo {
+  display: flex;
+  flex-direction: column;
+  margin-top: -300rpx;
+}
+
+.userinfo-avatar {
+  width:280rpx;
+  height:280rpx;
+  margin: 20rpx;
+  border-radius: 50%;
+}
+
+.userinfo-nickname {
+  color: black;
+  font-size: 50rpx;
+  display: flex;
+  margin-left: 50rpx;
+  margin-top: -10rpx;
+}
+
+.textUser{
+  font-size: 50rpx;
+  color: dodgerblue;
+}
+.up{
+  height: 40%;
+  width: 750rpx;
+  display: flex;
+  flex-direction: column;
+  border-bottom: 2rpx solid black;
+}
+.up-background{
+  height:350rpx;
+  width: 750rpx;
+  background: linear-gradient(#19AAA7,#87DBC1);
+  border-bottom-left-radius:200rpx;
+  border-bottom-right-radius:100rpx;
+}
+.center{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin-top:10rpx ;
+  color: white;
+  font-size: 40rpx;
+}
+.below{
+  height: 60%;
+  width: 750rpx;
+  display: flex;
+  background-color: white;
+
+  
+
+}
+.box{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  margin-top: 20%;
+  margin-left: 10%;
+  width: 80%;
+  height: 60%;
+  border: 2px solid black;
+  border-radius: 20%;
+  background-color:white;
+}
+image{
+  width: 80rpx;
+  height: 80rpx;
+  margin-left: 2%;
+  margin-top: 2%;
+}
+.bar{
+  
+  display: flex;
+  flex-direction: row;
+  margin-left: 5%;
+  align-items: center;
+
+  
+}
+.text_below{
+  font-size: 50rpx;
+  color: rgba(0, 0, 0, 0.836);
+  display: flex;
+  margin-left: 10%;
+  margin-top: 2%;
+}
+.line{
+  height: 0;
+  width: 100%;
+  border: 1px solid black;
+  display: flex;
+  margin-left: 0;
+}
+.line2{
+  height: 0;
+  width:  80%;
+  border: 1px solid black;
+  display: flex;
+  margin-left: 10%;
+}

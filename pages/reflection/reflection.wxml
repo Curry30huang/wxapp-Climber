@@ -1,0 +1,66 @@
+<!-- 这是反思自我的模块 -->
+<view class="container">
+
+  <view class='header'>
+    <text class='header_text'>开始回顾</text>
+
+    <image src='/images/add.png' class="plus_img"  bindtap='add'></image>
+
+    <image src='/images/editor.png' class='editor_icon' bindtap="editor"></image>
+  </view>
+
+  <view class="weui-search-bar__form">
+    <!-- 搜索框 -->
+    <view class="search">
+      <input placeholder="搜索关键字" confirm-type="search"  class="search_ipt" value="{{inputVal}}"  bindinput="inputTyping" />
+      <image src='/images/search.png' class='search_icon'  mode='widthFix' bindtap="search"></image>
+      <!-- 用于直接返回全部的渲染 -->
+      <text class="search_text" bindtap="hideInput">取消</text>
+    </view>
+    <!-- 这个就是展现推荐的关键词，注意用wxss进行堆叠 -->
+    <scroll-view class='scroll-view1' wx:if='{{viewShowed}}' scroll-y>
+      <block wx:for="{{carList}}"  wx:key="*this" class="msg-item " >
+        <view class='user-name' bindtap='name' data-index="{{index}}" >{{item}}</view>
+      </block>
+    </scroll-view>
+  </view>
+ 
+  <scroll-view class='some_list'>
+    <view wx:if="{{itemShowed==true}}">
+        <view class='list_item' wx:for="{{list}}" data-index="{{index}}" wx:key="*this" >
+            <image
+            data-index='{{index}}'
+            data-src='{{item.check ? "/images/check_true.png" : "/images/check_false.png" }}'
+            bindtap='check'
+            src='{{item.check ? "/images/check_true.png" : "/images/check_false.png" }}'
+            class="list_check {{chexkStatus ? 'show' : 'hide'}} "></image>
+            <!-- 这个是点击进入修改界面（可以学习，后期放到数据库里面） -->
+            <view class='{{chexkStatus ? "list_pad" : "list_rgt"}}'  bindtap='listDetail' data-index="{{index}}">
+                <view class='list_time'>{{item.time}}</view>
+                <view class='list_title'>{{item.boolnum ? "（好的）":"（未做好）"}}{{item.title}}</view>
+                <view class='list_text'><text class='create_time'>{{item.time}}</text>{{item.text}}</view>
+            </view>
+          </view>
+    </view>
+
+
+    <!-- 这个是查找之后的结果 -->
+    <view  class='list_item' wx:else>
+      <!-- 下面那个函数还没有完善 -->
+      <image
+      data-src='{{ js.check ? "/images/check_true.png" : "/images/check_false.png" }}'
+      bindtap='check2'
+      src='{{ js.check ? "/images/check_true.png" : "/images/check_false.png" }}'
+      class="list_check {{chexkStatus ? 'show' : 'hide'}} "></image>
+      <view class='{{chexkStatus ? "list_pad" : "list_rgt"}}'  bindtap='listDetail2'>
+        <view class='list_time'>{{js.time}}</view>
+        <view class='list_title'>{{js.boolnum ? "（好的）":"（未做好）"}}{{js.title}}</view>
+        <view class='list_text'><text class='create_time'>{{js.time}}</text>{{js.text}}</view>
+      </view>
+    </view>
+  </scroll-view>
+    <view class="{{chexkStatus ? 'bottom_btn_box' : 'hide'}} ">
+      <button class='editor_btn' bindtap='save'>完成</button>
+      <button class='editor_btn' bindtap='delHandel'>删除</button>
+    </view>
+</view>
