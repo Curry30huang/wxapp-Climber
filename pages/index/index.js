@@ -1,31 +1,6 @@
+const app=getApp()
 Page({
   data: {
-    image_srcs:[
-      {
-        index:1,
-        image_srcs: "https://s1.imagehub.cc/images/2020/11/25/9e941f339aa004983ab610987bb5e6d0.jpg"
-      },
-      {
-        index:2,
-        image_srcs: "https://s1.imagehub.cc/images/2020/11/25/65bedb33ef5ff69c0eae841b2e8397da.jpg"
-      },
-      {
-        index:3,
-        image_srcs: "https://s1.imagehub.cc/images/2020/11/25/423d8161d543e759d411fbd67aeef739.jpg"
-      },
-      {
-        index:4,
-        image_srcs: "https://s1.imagehub.cc/images/2020/11/25/c9830c7593e9f764a48efdfed9bedcd5.jpg"
-      },
-      {
-        index:5,
-        image_srcs: "https://s1.imagehub.cc/images/2020/11/25/timg-2.jpg"
-      },
-      {
-        index:6,
-        image_srcs: "https://s1.imagehub.cc/images/2020/11/25/u19940963011677991235fm26gp0.jpg"
-      },
-    ],
     circles:[
       {
         index:1,
@@ -51,11 +26,57 @@ Page({
         text:"微习惯",
         nav:"/pages/habit/habit"
       }
-    ]
-    
-    
+    ],
   },
-  
+  onLoad()
+  {
+    var that = this
+    if(!app.globalData.got)
+    {
+      wx.showLoading({
+        title: '加载中',
+        mask:true
+      })
+      app.getNews().then(res=>
+        {
+          if(res!="error")
+          {
+            that.getData(res)
+          }
+        }
+      )
+    }
+  },
+  onShow()
+  {
+    if(this.data.image_srcs)
+    {
+      this.setData({
+        image_srcs:this.data.image_srcs
+      })
+    }
+  },
+  getData(e)
+  {
+    this.setData({
+      image_srcs:e
+    })
+    wx.hideLoading()
+    this.onShow()
+    wx.showToast({
+      title: '初次使用前，请看轮播图里“开发者有话说”吧😊它能帮你更快上手这款小程序哦！',
+      icon:"none",
+      duration:3500,
+    })
+  },
+  // (代办解决跳转新闻 )
+  navNews(e)
+  {
+    app.globalData.p_index =  ~~e.currentTarget.dataset.index
+    wx.navigateTo({
+        url: '/pages/passages/news/news'
+    })
+  },
   onShareAppMessage() {
     return {
       title: '攀登者',

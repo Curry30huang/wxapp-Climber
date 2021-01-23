@@ -20,7 +20,7 @@
     <view class="short_p weui-footer__text weui-footer">点击图片放大</view>
     <view class="image_size">
       <image src="https://s1.imagehub.cc/images/2020/12/10/mmexport1607611568496.png"       data-src="https://s1.imagehub.cc/images/2020/12/10/mmexport1607611568496.png" mode="aspectFit" bindtap="show_picture"></image>
-    </view>  
+    </view>
   </view>
 
   <view hidden="{{list2[1]}}">
@@ -44,7 +44,7 @@
     <view class="short_p weui-footer__text weui-footer">点击图片放大</view>
     <view class="image_size">
       <image src="https://s1.imagehub.cc/images/2020/12/10/mmexport1607611571375.png"       data-src="https://s1.imagehub.cc/images/2020/12/10/mmexport1607611571375.png" mode="aspectFit" bindtap="show_picture"></image>
-    </view>  
+    </view>
   </view>
 
   <view hidden="{{list2[2]}}">
@@ -72,14 +72,15 @@
     <view class="short_p weui-footer__text weui-footer">点击图片放大</view>
     <view class="image_size">
      <image src="https://s1.imagehub.cc/images/2020/12/10/mmexport1607611569575.png"        data-src="https://s1.imagehub.cc/images/2020/12/10/mmexport1607611569575.png" mode="aspectFit" bindtap="show_picture"></image>
-    </view>  
+    </view>
   </view>
 
 </view>
+
 <view class="passage2" wx:if="{{list[1]}}">
   <rich-text nodes="{{passage2}}"></rich-text>
 </view>
-<view class="passage3" wx:if="{{list[2]}}">
-  <text>现在还无此文章，敬请期待</text>
-</view>
 
+<view class="passage3" wx:if="{{list[2]}}">
+  <text>暂无内容</text>
+</view>

@@ -11,7 +11,8 @@
     "pages/habit/habit",
     "pages/totaldata/totaldata",
     "pages/passages/passages",
-    "pages/feedback/feedback"
+    "pages/feedback/feedback",
+    "pages/passages/news/news"
   ],
   "window": {
     "backgroundTextStyle": "light",

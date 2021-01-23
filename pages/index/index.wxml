@@ -10,7 +10,7 @@
           <view class="circle">
             <image src="{{item.src}}" style="height:55px;width:55px;border-radius:55px"> </image>
           </view>
-          <text>{{item.text}}</text>
+          <text class="content">{{item.text}}</text>
         </navigator>
       </view>
     </view>  
@@ -18,7 +18,9 @@
   <!--文章封面-->
   <view class="below">
     <view wx:for="{{image_srcs}}" wx:key="index">
-      <view>
+      <view bindtap="navNews" data-index="{{index}}">
+        <!-- （代办将文字标题放在图片中 间） -->
+        <text class="newsTitle">{{item.title}}</text>
         <image src="{{item.image_srcs}}" class="image_below"></image>
       </view>
     </view>

@@ -4,6 +4,7 @@
   border: 2rpx solid black;
   margin-top: 40rpx;
 }
+
 .below{
   width: 750rpx;
   height: 1020rpx;
@@ -39,7 +40,7 @@
   background: linear-gradient(#19AAA7,#87DBC1);
   
 }
-text{
+.content{
   
   font-size: 25rpx;
   display: flex;
@@ -48,4 +49,8 @@ text{
   color: white;
   
 }
-  
+.newsTitle{
+  text-align:center;
+  z-index: 2;
+  position: absolute;
+}  

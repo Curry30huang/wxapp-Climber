@@ -79,6 +79,7 @@ Page({
       if(i==app.globalData.p_index) temp[i]=true
       else temp[i]=false
     }
+
     this.setData({
       list:temp
     })
